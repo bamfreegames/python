@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from test_examples import func
+from old.test_examples import func
 
 def test_answer():
     assert not func(3) == 5
