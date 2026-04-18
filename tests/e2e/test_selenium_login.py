@@ -20,3 +20,11 @@ def test_login_successful(driver):
     driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     assert "secure" in driver.current_url
+
+def test_login_empty_fields(driver):
+    driver.get("https://the-internet.herokuapp.com/login")
+    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    error = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, ".flash.error"))
+    )
+    assert "username is invalid" in error.text.lower()
