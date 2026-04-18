@@ -19,8 +19,4 @@ def invalid_order():
 #this is just a comment to test
 #that I can retrieve a change in local from remote repo
 
-<<<<<<< HEAD
-#prueba para fetch
-=======
 #me equivoque
->>>>>>> main
