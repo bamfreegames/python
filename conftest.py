@@ -1,4 +1,5 @@
 # Borja's version - conflict practice
+# Team version - conflict practice
 import pytest
 
 @pytest.fixture
