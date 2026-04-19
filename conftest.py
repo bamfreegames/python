@@ -1,3 +1,4 @@
+# Team version - conflict practice
 import pytest
 
 @pytest.fixture
