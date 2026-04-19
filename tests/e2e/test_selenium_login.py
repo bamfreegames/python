@@ -14,11 +14,22 @@ def driver():
     yield driver
     driver.quit()
 
+def test_login_using_css_selector(driver):
+    # Usa CSS selectors para todos los elementos
+    # 1. Ve a la página
+    driver.get("https://www.selenium.dev/selenium/web/locators_tests/locators.html")
+    element = driver.find_element(By.ID, "lname")    # 2. Encuentra username por CSS selector
+    # 3. Encuentra password por CSS selector
+    # 4. Encuentra el botón por CSS selector
+    # 5. Verifica que llegaste a /secure
+
 def test_login_successful(driver):
     driver.get("https://the-internet.herokuapp.com/login")
     driver.find_element(By.ID, "username").send_keys("tomsmith")
     driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    # Explicit wait para cambio de URL
+    WebDriverWait(driver, 10).until(EC.url_contains("secure"))
     assert "secure" in driver.current_url
 
 def test_login_empty_fields(driver):
