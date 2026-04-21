@@ -26,8 +26,11 @@ def invalid_order():
 @pytest.fixture
 def driver():
     # SETUP — crea el driver antes del test
-    service = webdriver.ChromeService()
-    driver = webdriver.Chrome(service=service)
+    service = Service(ChromeDriverManager().install())
+    #headless
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(options = options, service=service)
     driver.implicitly_wait(10)
     yield driver
     driver.quit()

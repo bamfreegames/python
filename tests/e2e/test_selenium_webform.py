@@ -22,16 +22,57 @@ def driver():
 
 
 #TEST 1 — Verifica que la tabla 1 tiene 4 filas
-def test_verify_table1(driver):
+def test_verify_table1_rows(driver):
     driver.get(URL_3)
     element = driver.find_element(By.ID,"table1")
-    table1_rows = element.find_elements(By.TAG_NAME,'tr')
-    assert table1_rows.size == 4
-
+    table1_rows = element.find_elements(By.CSS_SELECTOR,'tbody tr')
+    assert len(table1_rows) == 4
 
 #TEST 2 — Verifica que "Smith" está en la primera fila de la tabla 1
+def test_verify_table1_first_entry(driver):
+    driver.get(URL_3)
+    element = driver.find_element(By.ID,"table1")
+    table1_rows = element.find_elements(By.CSS_SELECTOR,'tbody tr')
+    # Get first element of tag 'td'
+    #element_first_row_table1 = table1_rows[0].find_element(By.TAG_NAME, 'td')
+    #get all elements from the first row
+    elements_first_row_table1 = table1_rows[0].find_elements(By.TAG_NAME, 'td')
+    assert elements_first_row_table1[0].text == "Smith"
+    assert elements_first_row_table1[2].text == "jsmith@gmail.com"
+
 #TEST 3 — Usando tabla 2 con clases, obtén el email de "Jason Doe"
+def test_verify_email_person(driver):    
+    #vamos a la url
+    driver.get(URL_3)
+    #encontramos la tabla
+    element = driver.find_element(By.ID,"table2")
+    #extraemos las filas con datos de clientes
+    rows = element.find_elements(By.CSS_SELECTOR,'tbody tr')
+    #recorremos las filas hasta encontrar un match en el nombre
+    for r in rows:
+        if r.find_element(By.CLASS_NAME,"first-name").text == "Jason" and r.find_element(By.CLASS_NAME,"last-name").text == "Doe":
+            email = r.find_element(By.CLASS_NAME,"email").text
+            break
+
+    assert email == "jdoe@hotmail.com"
+
 #TEST 4 — Encuentra la fila de "Tim Conway" y haz click en su link "edit"
+def test_click_edit_person(driver):    
+    #vamos a la url
+    driver.get(URL_3)
+    #encontramos la tabla
+    element = driver.find_element(By.ID,"table2")
+    #extraemos las filas con datos de clientes
+    rows = element.find_elements(By.CSS_SELECTOR,'tbody tr')
+    #recorremos las filas hasta encontrar un match en el nombre
+    for r in rows:
+        if r.find_element(By.CLASS_NAME,"first-name").text == "Tim" and r.find_element(By.CLASS_NAME,"last-name").text == "Conway":
+            #hago click en edit
+            edit_button = r.find_element(By.CSS_SELECTOR,'[href="#edit"]')
+            edit_button.click()
+            break
+
+    assert "edit" in driver.current_url
 
 #TEST 1 — Escribe texto en el Text input y verifica el valor
 def test_text_input_value_using_css_selector(driver):
