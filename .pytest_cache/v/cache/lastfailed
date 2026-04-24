@@ -13,5 +13,15 @@
   "tests/e2e/test_ui_locators.py::TestLocators::test_login_by_placeholder[chromium]": true,
   "tests/e2e/test_ui_locators.py::TestLocators::test_login_failed[chromium]": true,
   "tests/e2e/test_selenium_webform.py::test_verify_table1": true,
-  "tests/e2e/test_selenium_webform.py::test_dynamic_loading": true
+  "tests/e2e/test_selenium_webform.py::test_dynamic_loading": true,
+  "tests/e2e/test_selenium_alerts.py::test_verify_table1_rows": true,
+  "tests/e2e/test_selenium_keys.py::test_click_enter": true,
+  "tests/e2e/test_selenium_scroll.py::test_complete_navigation_flow": true,
+  "tests/e2e/test_selenium_scroll.py::test_redirection": true,
+  "tests/api/test_coingecko_api.py::test_get_bitcoin_price": true,
+  "tests/api/test_coingecko_api.py::test_bitcoin_price[bitcoin-Bitcoin-btc]": true,
+  "tests/api/test_coingecko_api.py::test_bitcoin_price[ethereum-Ethereum-eth]": true,
+  "tests/api/test_coingecko_api.py::test_bitcoin_price[tether-Tether-usdt]": true,
+  "tests/api/test_coingecko_api.py::test_bitcoin_price[solana-Solana-sol]": true,
+  "tests/api/test_coingecko_api.py::test_get_coins": true
 }

@@ -1,5 +1,5 @@
 import pytest
-
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -25,6 +25,14 @@ def invalid_order():
 
 @pytest.fixture
 def driver():
+    service = webdriver.ChromeService()
+    driver = webdriver.Chrome(service=service)
+    driver.implicitly_wait(10)
+    yield driver
+    driver.quit()
+
+@pytest.fixture
+def driver_headless():
     # SETUP — crea el driver antes del test
     service = Service(ChromeDriverManager().install())
     #headless
@@ -40,3 +48,22 @@ def driver():
 
 #me equivoque
 #vale ya lo entiendo jeje
+
+# conftest.py
+
+#@pytest.fixture(autouse=True)
+@pytest.fixture()
+def capture_screenshot_on_failure(request, driver):
+    yield
+    if request.node.rep_call.failed:
+        test_name = request.node.name
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"screenshots/{test_name}_{timestamp}.png"
+        driver.save_screenshot(filename)
+        print(f"\nScreenshot saved: {filename}")
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
