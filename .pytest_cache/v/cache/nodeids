@@ -74,6 +74,7 @@
   "tests/e2e/test_selenium_locators.py::test_submit_button",
   "tests/e2e/test_selenium_login.py::test_login_empty_fields",
   "tests/e2e/test_selenium_login.py::test_login_successful",
+  "tests/e2e/test_selenium_login.py::test_login_using_css_selector",
   "tests/e2e/test_selenium_navigation.py::test_complete_navigation_flow",
   "tests/e2e/test_selenium_navigation.py::test_hover_shows_caption",
   "tests/e2e/test_selenium_scroll.py::test_complete_navigation_flow",

@@ -5,7 +5,6 @@
   "test_advanced.py::test_foo[1-2-5]": true,
   "test_advanced.py::test_foo[2-3-8]": true,
   "test_advanced.py::test_foo[5-3-18]": true,
-  "old/test_examples1.py": true,
   "tests/api/test_crypto_api.py::TestCryptoAPI::test_multiple_coins_return_price[bitcoin]": true,
   "tests/api/test_crypto_api.py::TestCryptoAPI::test_multiple_coins_return_price[ethereum]": true,
   "tests/api/test_crypto_api.py::TestCryptoAPI::test_invalid_coin_returns_empty": true,
@@ -23,5 +22,12 @@
   "tests/api/test_coingecko_api.py::test_bitcoin_price[ethereum-Ethereum-eth]": true,
   "tests/api/test_coingecko_api.py::test_bitcoin_price[tether-Tether-usdt]": true,
   "tests/api/test_coingecko_api.py::test_bitcoin_price[solana-Solana-sol]": true,
-  "tests/api/test_coingecko_api.py::test_get_coins": true
+  "tests/api/test_coingecko_api.py::test_get_coins": true,
+  "old/test_examples1.py::test_answer": true,
+  "old/test_examples1.py::test_floats": true,
+  "old/test_examples1.py::test_arrays": true,
+  "old/test_examples1.py::test_foo_not_implemented": true,
+  "old/test_examples1.py::test_match": true,
+  "old/test_examples1.py::test_exception_in_group_at_given_depth": true,
+  "tests/e2e/test_quickfix.py": true
 }
