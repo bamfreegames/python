@@ -22,7 +22,7 @@ def test_login_using_css_selector(driver):
     # 3. Encuentra password por CSS selector
     # 4. Encuentra el botón por CSS selector
     # 5. Verifica que llegaste a /secure
-
+    
 def test_login_successful(driver):
     driver.get("https://the-internet.herokuapp.com/login")
     driver.find_element(By.ID, "username").send_keys("tomsmith")

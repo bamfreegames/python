@@ -63,6 +63,7 @@
   "tests/e2e/test_selenium_cookie.py::test_add_custom_cookie",
   "tests/e2e/test_selenium_cookie.py::test_delete_cookie",
   "tests/e2e/test_selenium_cookie.py::test_get_all_cookies",
+  "tests/e2e/test_selenium_interactions.py::test_login_using_css_selector",
   "tests/e2e/test_selenium_keys.py::test_click_enter",
   "tests/e2e/test_selenium_keys.py::test_cmd_a_delete",
   "tests/e2e/test_selenium_keys.py::test_cmd_a_select",

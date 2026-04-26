@@ -29,5 +29,6 @@
   "old/test_examples1.py::test_foo_not_implemented": true,
   "old/test_examples1.py::test_match": true,
   "old/test_examples1.py::test_exception_in_group_at_given_depth": true,
-  "tests/e2e/test_quickfix.py": true
+  "tests/e2e/test_quickfix.py": true,
+  "tests/e2e/test_selenium_interactions.py::test_login_using_css_selector": true
 }
