@@ -46,3 +46,23 @@ def test_click_navigate_new_window(driver):
     driver.switch_to.window(original_window)
     assert "The Internet" in driver.title
     assert "New Window" in text
+
+
+# # Guardar la ventana actual
+# original = driver.current_window_handle
+
+# # Esperar a que se abra una nueva
+# wait.until(EC.number_of_windows_to_be(2))
+
+# # Cambiar a la nueva
+# for handle in driver.window_handles:
+#     if handle != original:
+#         driver.switch_to.window(handle)
+#         break
+
+# # Hacer cosas en la nueva ventana
+# driver.find_element(By.ID, "...").click()
+
+# # Cerrar la actual y volver
+# driver.close()
+# driver.switch_to.window(original)

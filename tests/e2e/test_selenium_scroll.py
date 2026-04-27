@@ -67,3 +67,26 @@ def test_complete_navigation_flow(driver):
     after_count = len(driver.find_elements(By.CSS_SELECTOR,'div[class="jscroll-added"]'))
     #Verifica que hay más párrafos que al principio
     assert after_count > initial_count
+
+
+
+#     # Scroll a un elemento específico
+# element = driver.find_element(By.ID, "footer")
+# driver.execute_script("arguments[0].scrollIntoView();", element)
+
+# # Scroll alineado al centro de la pantalla
+# driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
+# # Scroll absoluto
+# driver.execute_script("window.scrollTo(0, 500);")  # 500px desde arriba
+# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # al fondo
+
+# # Scroll en infinite scroll
+# last_height = driver.execute_script("return document.body.scrollHeight")
+# while True:
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+#     time.sleep(2)
+#     new_height = driver.execute_script("return document.body.scrollHeight")
+#     if new_height == last_height:
+#         break
+#     last_height = new_height

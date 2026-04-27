@@ -43,3 +43,13 @@ def test_complete_navigation_flow(driver):
     driver.refresh()
     wait.until(EC.url_contains("abtest"))
     assert "abtest" in driver.current_url
+
+
+#     # Tamaño específico
+# driver.set_window_size(375, 667)   # iPhone SE
+
+# # Maximizar
+# driver.maximize_window()
+
+# # Pantalla completa
+# driver.fullscreen_window()

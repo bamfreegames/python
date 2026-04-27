@@ -44,6 +44,9 @@ def test_cmd_a_delete(driver):
     input.send_keys("5")
     
     # Cmd+A para seleccionar todo y borrar DELETE
+    # Borrar todo el contenido de un input
+    #input.send_keys(Keys.COMMAND + "a")
+    #input.send_keys(Keys.DELETE)
     ActionChains(driver)\
         .key_down(Keys.COMMAND)\
         .send_keys("a")\
@@ -61,6 +64,9 @@ def test_cmd_c_v(driver):
     input.send_keys("5")
     
     # Cmd+C para copiar
+    # Combinaciones (Mac vs Windows)
+    #input.send_keys(Keys.COMMAND + "a")   # Mac
+    #input.send_keys(Keys.CONTROL + "a")   # Windows/Linux
     ActionChains(driver)\
         .key_down(Keys.COMMAND)\
         .send_keys("a")\

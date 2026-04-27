@@ -39,6 +39,7 @@ def test_click_js_alert(driver):
     element.click()
     #saltamos la alerta
     wait = WebDriverWait(driver, timeout=5)
+    #alert = wait.until(EC.alert_is_present())
     alert = wait.until(lambda d : d.switch_to.alert)
     text = alert.text
     alert.accept()
